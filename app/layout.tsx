@@ -10,8 +10,7 @@ const inter = Inter({ subsets: ["latin"] })
 // Update the title and metadata
 export const metadata = {
   title: "Commune",
-  description: "Stay connected with Irvine Valley College events",
-    generator: 'v0.dev'
+  description: "Stay connected with Irvine Valley College events"
 }
 
 // Update the layout to include the mobile navigation
