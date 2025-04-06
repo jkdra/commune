@@ -95,11 +95,11 @@ export default function ProfilePage() {
             <CardContent className="space-y-4">
               <div className="flex items-center justify-between">
                 <span className="text-sm font-medium">Email Notifications</span>
-                <EmailNotificationsBadge />
+                <ToggleableBadge />
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-sm font-medium">Push Notifications</span>
-                <PushNotificationsBadge />
+                <span className="text-sm font-medium">Puh Notifications</span>
+                <ToggleableBadge />
               </div>
             </CardContent>
           </Card>
@@ -108,26 +108,7 @@ export default function ProfilePage() {
   )
 }
 
-
-function EmailNotificationsBadge() {
-  const [enabled, setEnabled] = useState(true)
-  const toggleEnabled = () => setEnabled(!enabled)
-
-  const badgeText = enabled ? "Enabled" : "Disabled"
-  const badgeVariant = enabled ? "default" : "outline"
-
-  return (
-      <Badge
-          variant={badgeVariant}
-          className="cursor-pointer"
-          onClick={toggleEnabled}
-      >
-        {badgeText}
-      </Badge>
-  )
-}
-
-function PushNotificationsBadge() {
+function ToggleableBadge() {
   const [enabled, setEnabled] = useState(false)
   const toggleEnabled = () => setEnabled(!enabled)
 
