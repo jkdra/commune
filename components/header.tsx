@@ -8,6 +8,7 @@ import { ThemeToggle } from "@/components/theme-toggle"
 import { useState, useEffect } from "react"
 import { cn } from "@/lib/utils"
 import { usePathname } from "next/navigation"
+import {AvatarImage} from "@/components/ui/avatar";
 
 export default function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
@@ -31,7 +32,7 @@ export default function Header() {
     }
   }, [])
 
-  return (
+  return  (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
         {/* Mobile view */}
@@ -95,24 +96,25 @@ export default function Header() {
                 </Button>
               )}
               <Link href="/" className="flex items-center space-x-2">
-                <Calendar className="h-6 w-6" />
+                {/*<Calendar className="h-6 w-6" />*/}
+                <img src="/logo1.webp" alt="Commune"/>
                 <span className="font-bold text-xl">Commune</span>
               </Link>
             </div>
 
             <div
-              className={cn(
-                "flex items-center transition-all duration-300 ease-in-out",
-                isSearchOpen ? "w-full" : "w-auto",
-              )}
+                className={cn(
+                    "flex items-center transition-all duration-300 ease-in-out",
+                    isSearchOpen ? "w-full" : "w-auto",
+                )}
             >
               {isSearchOpen ? (
-                <div className="w-full max-w-md relative">
-                  <Input
-                    placeholder="Search events..."
-                    className="w-full pr-10"
-                    autoFocus
-                    onBlur={() => setIsSearchOpen(false)}
+                  <div className="w-full max-w-md relative">
+                    <Input
+                        placeholder="Search events..."
+                        className="w-full pr-10"
+                        autoFocus
+                        onBlur={() => setIsSearchOpen(false)}
                   />
                   <Button
                     variant="ghost"
